@@ -1,6 +1,4 @@
 #!/bin/bash
-set -euo pipefail
-
 deploy() {
     local region=$1
 

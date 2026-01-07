@@ -1,8 +1,7 @@
 #!/bin/bash
 
 microBenchmarks=("gemm" "sha256" "aesCtr" "gzip" "json")
-# microBenchmarks=("gemm")
-instanceMemoryOptions=(128 512 2048) # in MB
+instanceMemoryOptions=(128 512 2048)
 
 deploy() {
     local location=$1

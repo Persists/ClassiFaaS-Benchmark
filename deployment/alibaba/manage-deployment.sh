@@ -1,5 +1,4 @@
 #!/bin/bash
-set -euo pipefail
 
 deploy() {
     local location="$1"
