@@ -5,6 +5,11 @@ ClassiFaaS is a deployment and benchmarking tool for serverless functions across
 ## Folder Structure
 - `cmd`: Main command-line applications for deployment and benchmarking.
 - `configs`: Configuration files for deployment and benchmarking.
+  - `configs/deployment.yaml`: Main deployment configuration file.
+  - `configs/generated.yaml`: Auto-generated benchmark configuration file. 
+    - This file contains the same parameters as `deployment.yaml` and is used for benchmarking.
+    - only the memory sizes specified in `deployment.yaml` are included here.
+    - Input sizes for benchmarks are added to the function URLs in this file. (serves as the benchmark config)
 - `internal`: Internal packages for deployment and benchmarking logic.
 - `credentials`: Credential files for cloud provider access (GCP only).
 - `deployment`: Cloud provider-specific deployment scripts and function code.
