@@ -1,0 +1,31 @@
+workload:
+  parallelRequests: 500
+  totalRequests: 2500
+  retriesPerRequest: 7
+  resultFolder: results
+
+benchmarks:
+  gemm: 400
+  # sha256: 32
+  # aesCtr: 64
+  # gzip: 4
+  # json: 750
+
+memorySizes:
+  #- 128
+  - 512
+  #- 2048
+
+deployments:
+  - provider: aws
+    region: us-east-1
+
+  - provider: alibaba
+    region: us-east-1
+
+  - provider: gcp
+    region: us-east1
+
+  - provider: azure
+    region: germanywestcentral
+# For Generating Benchmark Configuration

@@ -1,0 +1,116 @@
+{
+    "gemm-128": {
+        "region": "eu-west-1",
+        "cpu": 0.1,
+        "description": "",
+        "disableOndemand": false,
+        "diskSize": 512,
+        "functionArn": "acs:fc:eu-west-1:5393756037312031:functions/gemm-128",
+        "functionName": "gemm-128",
+        "handler": "index.gemm",
+        "instanceIsolationMode": "SHARE",
+        "internetAccess": true,
+        "memorySize": 128,
+        "resourceGroupId": "rg-acfnute4hkb64hy",
+        "role": "",
+        "runtime": "nodejs20",
+        "sessionAffinity": "NONE",
+        "timeout": 3,
+        "triggers": [
+            {
+                "description": "",
+                "qualifier": "LATEST",
+                "triggerConfig": {
+                    "methods": [
+                        "GET"
+                    ],
+                    "authType": "anonymous",
+                    "disableURLInternet": false
+                },
+                "triggerName": "httpTrigger",
+                "triggerType": "http"
+            }
+        ],
+        "url": {
+            "system_url": "https://gemm-lelkdiqmkl.eu-west-1.fcapp.run",
+            "system_intranet_url": "https://gemm-lelkdiqmkl.eu-west-1-vpc.fcapp.run"
+        },
+        "__component": "fc3"
+    },
+    "gemm-256": {
+        "region": "eu-west-1",
+        "cpu": 0.2,
+        "description": "My Master thesis bench functions",
+        "disableOndemand": false,
+        "diskSize": 512,
+        "functionArn": "acs:fc:eu-west-1:5393756037312031:functions/cpu-bench-256",
+        "functionName": "cpu-bench-256",
+        "handler": "index.gemm",
+        "instanceIsolationMode": "SHARE",
+        "internetAccess": true,
+        "memorySize": 256,
+        "resourceGroupId": "rg-acfnute4hkb64hy",
+        "role": "",
+        "runtime": "nodejs20",
+        "sessionAffinity": "NONE",
+        "timeout": 3,
+        "triggers": [
+            {
+                "description": "",
+                "qualifier": "LATEST",
+                "triggerConfig": {
+                    "methods": [
+                        "GET"
+                    ],
+                    "authType": "anonymous",
+                    "disableURLInternet": false
+                },
+                "triggerName": "httpTrigger",
+                "triggerType": "http"
+            }
+        ],
+        "url": {
+            "system_url": "https://cpu-bench-dvhmyqvnyq.eu-west-1.fcapp.run",
+            "system_intranet_url": "https://cpu-bench-dvhmyqvnyq.eu-west-1-vpc.fcapp.run"
+        },
+        "__component": "fc3"
+    },
+    "gemm-512": {
+        "region": "eu-west-1",
+        "cpu": 0.4,
+        "description": "My Master thesis bench functions",
+        "disableOndemand": false,
+        "diskSize": 512,
+        "functionArn": "acs:fc:eu-west-1:5393756037312031:functions/gemm-512",
+        "functionName": "gemm-512",
+        "handler": "index.gemm",
+        "instanceIsolationMode": "SHARE",
+        "internetAccess": true,
+        "memorySize": 512,
+        "resourceGroupId": "rg-acfnute4hkb64hy",
+        "role": "",
+        "runtime": "nodejs20",
+        "sessionAffinity": "NONE",
+        "timeout": 3,
+        "triggers": [
+            {
+                "description": "",
+                "qualifier": "LATEST",
+                "triggerConfig": {
+                    "methods": [
+                        "GET"
+                    ],
+                    "authType": "anonymous",
+                    "disableURLInternet": false
+                },
+                "triggerName": "httpTrigger",
+                "triggerType": "http"
+            }
+        ],
+        "url": {
+            "system_url": "https://gemm-pdfkdiqmkl.eu-west-1.fcapp.run",
+            "system_intranet_url": "https://gemm-pdfkdiqmkl.eu-west-1-vpc.fcapp.run"
+        },
+        "__component": "fc3"
+    }
+}

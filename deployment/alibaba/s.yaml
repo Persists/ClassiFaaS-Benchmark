@@ -1,0 +1,324 @@
+# ------------------------------------
+#   官方手册: https://manual.serverless-devs.com/user-guide/aliyun/#fc3
+#   常见小贴士: https://manual.serverless-devs.com/user-guide/tips/
+#   有问题快来钉钉群问一下吧：33947367
+# ------------------------------------
+edition: 3.0.0
+name: b-thesis-benchmarks
+access: "default"
+resources:
+  b-gemm-128: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-gemm-128
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.gemm
+      memorySize: 128
+      cpu: 0.1
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /gemm128
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-gzip-128: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-gzip-128
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.gzip
+      memorySize: 128
+      cpu: 0.1
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /gzip128
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-sha256-128: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-sha256-128
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.sha256
+      memorySize: 128
+      cpu: 0.1
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /sha256128
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-aesCtr-128: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-aesCtr-128
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.aesCtr
+      memorySize: 128
+      cpu: 0.1
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /aesCtr128
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-json-128: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-json-128
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.json
+      memorySize: 128
+      cpu: 0.1
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /json128
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-gemm-512: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-gemm-512
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.gemm
+      memorySize: 512
+      cpu: 0.4
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /gemm512
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-gzip-512: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-gzip-512
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.gzip
+      memorySize: 512
+      cpu: 0.4
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /gzip512
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-sha256-512: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-sha256-512
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.sha256
+      memorySize: 512
+      cpu: 0.4
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /sha256512
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-aesCtr-512: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-aesCtr-512
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.aesCtr
+      memorySize: 512
+      cpu: 0.4
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /aesCtr512
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-json-512: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-json-512
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.json
+      memorySize: 512
+      cpu: 0.4
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /json512
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-gemm-2048: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-gemm-2048
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.gemm
+      memorySize: 2048
+      cpu: 1.6
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /gemm2048
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-gzip-2048: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-gzip-2048
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.gzip
+      memorySize: 2048
+      cpu: 1.6
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /gzip2048
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-sha256-2048: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-sha256-2048
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.sha256
+      memorySize: 2048
+      cpu: 1.6
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /sha2562048
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-aesCtr-2048: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-aesCtr-2048
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.aesCtr
+      memorySize: 2048
+      cpu: 1.6
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /aesCtr2048
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET
+  b-json-2048: # 资源名称
+    component: fc3
+    props:
+      logConfig: auto
+      region: ${env('REGION')}
+      functionName: b-json-2048
+      runtime: "nodejs20"
+      code: ./code
+      handler: index.json
+      memorySize: 2048
+      cpu: 1.6
+      diskSize: 512
+      timeout: 60
+      triggers:
+        - triggerName: httpTrigger # 触发器名称
+          triggerType: http # 触发器类型
+          path: /json2048
+          triggerConfig:
+            authType: anonymous # 鉴权类型，可选值：anonymous、function
+            methods: # HTTP 触发器支持的访问方法，可选值：GET、POST、PUT、DELETE、HEAD
+              - GET

@@ -1,0 +1,136 @@
+service: b-mt-bench
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ${param:region} # Use parameter for region example: sls deploy --param region=eu-west-1
+  timeout: 30
+  apiGateway:
+    apiKeys:
+      - apiKey
+
+package:
+  patterns:
+    - ../shared/**
+
+functions:
+  gemm128:
+    handler: handler.gemm
+    memorySize: 128
+    events:
+      - http:
+          path: gemm128
+          method: get
+          private: true
+  aesCtr128:
+    handler: handler.aesCtr
+    memorySize: 128
+    events:
+      - http:
+          path: aesCtr128
+          method: get
+          private: true
+  sha128:
+    handler: handler.sha256
+    memorySize: 128
+    events:
+      - http:
+          path: sha128
+          method: get
+          private: true
+  gzip128:
+    handler: handler.gzip
+    memorySize: 128
+    events:
+      - http:
+          path: gzip128
+          method: get
+          private: true
+  json128:
+    handler: handler.json
+    memorySize: 128
+    events:
+      - http:
+          path: json128
+          method: get
+          private: true
+  gemm512:
+    handler: handler.gemm
+    memorySize: 512
+    events:
+      - http:
+          path: gemm512
+          method: get
+          private: true
+  aesCtr512:
+    handler: handler.aesCtr
+    memorySize: 512
+    events:
+      - http:
+          path: aesCtr512
+          method: get
+          private: true
+  sha512:
+    handler: handler.sha256
+    memorySize: 512
+    events:
+      - http:
+          path: sha512
+          method: get
+          private: true
+  gzip512:
+    handler: handler.gzip
+    memorySize: 512
+    events:
+      - http:
+          path: gzip512
+          method: get
+          private: true
+  json512:
+    handler: handler.json
+    memorySize: 512
+    events:
+      - http:
+          path: json512
+          method: get
+          private: true
+  gemm2048:
+    handler: handler.gemm
+    memorySize: 2048
+    events:
+      - http:
+          path: gemm2048
+          method: get
+          private: true
+  aesCtr2048:
+    handler: handler.aesCtr
+    memorySize: 2048
+    events:
+      - http:
+          path: aesCtr2048
+          method: get
+          private: true
+  sha2048:
+    handler: handler.sha256
+    memorySize: 2048
+    events:
+      - http:
+          path: sha2048
+          method: get
+          private: true
+  gzip2048:
+    handler: handler.gzip
+    memorySize: 2048
+    events:
+      - http:
+          path: gzip2048
+          method: get
+          private: true
+  json2048:
+    handler: handler.json
+    memorySize: 2048
+    events:
+      - http:
+          path: json2048
+          method: get
+          private: true
