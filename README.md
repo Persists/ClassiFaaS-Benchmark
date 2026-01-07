@@ -40,7 +40,7 @@ Navigate to each cloud provider's `deployment/{provider}` directory and run:
 npm install
 ```
 
-For Alibaba Cloud, run `npm install` inside `deployment/alibaba/src` instead.
+For Alibaba Cloud, run `npm install` inside `deployment/alibaba/code` instead.
 
 ## Credentials and Authentication
 
