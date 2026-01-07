@@ -1,0 +1,36 @@
+workload:
+    parallelRequests: 500
+    totalRequests: 2500
+    retriesPerRequest: 7
+    resultFolder: results
+functions:
+    - name: aws-json-512
+      provider: aws
+      region: us-east-1
+      memorySize: 512
+      URL: https://hqjtwocuj2.execute-api.us-east-1.amazonaws.com/dev/json512?parameter=750
+      auth:
+        key: x-api-key
+        value: #here should be your api key
+    - name: azure-json-512
+      provider: azure
+      region: germanywestcentral
+      memorySize: 512
+      URL: https://b-fa-germanywestcentral-json-512mb.azurewebsites.net/api/json?parameter=750
+      auth:
+        key: x-functions-key
+        value: #here should be your api key
+    - name: alibaba-json-512
+      provider: alibaba
+      region: us-east-1
+      memorySize: 512
+      URL: https://b-json-hkmdhtnyiz.us-east-1.fcapp.run?parameter=750
+      auth:
+        key: Authorization
+    - name: gcp-json-512
+      provider: gcp
+      region: us-east1
+      memorySize: 512
+      URL: https://us-east1-master-thesis-475012.cloudfunctions.net/b-json-us-east1-512?parameter=750
+      auth:
+        key: Authorization
